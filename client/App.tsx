@@ -5,7 +5,13 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import { Moon, Sun, Recycle } from "lucide-react";
 import Index from "./pages/Index";
@@ -18,7 +24,9 @@ const queryClient = new QueryClient();
 function useTheme() {
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    const isDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved
+      ? saved === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", isDark);
   }, []);
 
@@ -35,7 +43,9 @@ function Header() {
   const location = useLocation();
 
   const isActive = (path: string) =>
-    location.pathname === path ? "text-primary" : "text-muted-foreground hover:text-foreground";
+    location.pathname === path
+      ? "text-primary"
+      : "text-muted-foreground hover:text-foreground";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -45,10 +55,20 @@ function Header() {
           <span>WasteZero</span>
         </Link>
         <nav className="flex items-center gap-6">
-          <Link to="/" className={isActive("/")}>Home</Link>
-          <Link to="/login" className={isActive("/login")}>Login</Link>
-          <Link to="/register" className={isActive("/register")}>Register</Link>
-          <button aria-label="Toggle theme" onClick={toggle} className="inline-flex h-9 w-9 items-center justify-center rounded-md border bg-card text-foreground shadow-sm">
+          <Link to="/" className={isActive("/")}>
+            Home
+          </Link>
+          <Link to="/login" className={isActive("/login")}>
+            Login
+          </Link>
+          <Link to="/register" className={isActive("/register")}>
+            Register
+          </Link>
+          <button
+            aria-label="Toggle theme"
+            onClick={toggle}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border bg-card text-foreground shadow-sm"
+          >
             <Sun className="h-4 w-4 dark:hidden" />
             <Moon className="hidden h-4 w-4 dark:block" />
           </button>

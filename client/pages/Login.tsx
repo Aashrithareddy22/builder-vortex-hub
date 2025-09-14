@@ -31,9 +31,12 @@ export default function Login() {
       <section className="container grid gap-10 py-10 md:grid-cols-2 md:py-16">
         {/* Left marketing */}
         <div className="flex flex-col justify-center">
-          <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">Join the Recycling Revolution</h1>
+          <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">
+            Join the Recycling Revolution
+          </h1>
           <p className="mt-3 max-w-prose text-muted-foreground">
-            WasteZero connects volunteers, NGOs, and administrators to schedule pickups, manage recycling opportunities, and make a positive impact.
+            WasteZero connects volunteers, NGOs, and administrators to schedule
+            pickups, manage recycling opportunities, and make a positive impact.
           </p>
           <div className="mt-6 grid grid-cols-3 gap-4 text-sm text-muted-foreground max-md:grid-cols-2">
             <div className="rounded-lg border bg-background p-4">
@@ -54,13 +57,22 @@ export default function Login() {
         {/* Right card */}
         <div className="mx-auto w-full max-w-md">
           <div className="mb-2 grid grid-cols-2 overflow-hidden rounded-lg border bg-muted/40 text-sm">
-            <button className="bg-background px-4 py-2 font-medium">Login</button>
-            <Link to="/register" className="px-4 py-2 text-center text-muted-foreground hover:text-foreground">Register</Link>
+            <button className="bg-background px-4 py-2 font-medium">
+              Login
+            </button>
+            <Link
+              to="/register"
+              className="px-4 py-2 text-center text-muted-foreground hover:text-foreground"
+            >
+              Register
+            </Link>
           </div>
 
           <div className="rounded-xl border bg-card p-6 shadow-sm">
             <h2 className="text-lg font-semibold">Login to your account</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Enter your credentials to access your account</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Enter your credentials to access your account
+            </p>
             <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label className="text-sm font-medium">Username</label>
@@ -70,7 +82,9 @@ export default function Login() {
                   {...register("username")}
                 />
                 {errors.username && (
-                  <p className="mt-1 text-xs text-destructive">{errors.username.message}</p>
+                  <p className="mt-1 text-xs text-destructive">
+                    {errors.username.message}
+                  </p>
                 )}
               </div>
 
@@ -83,7 +97,9 @@ export default function Login() {
                   {...register("password")}
                 />
                 {errors.password && (
-                  <p className="mt-1 text-xs text-destructive">{errors.password.message}</p>
+                  <p className="mt-1 text-xs text-destructive">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
 

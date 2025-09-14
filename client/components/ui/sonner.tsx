@@ -3,7 +3,9 @@ import { Toaster as Sonner } from "sonner";
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark");
+  const isDark =
+    typeof document !== "undefined" &&
+    document.documentElement.classList.contains("dark");
   const theme: ToasterProps["theme"] = isDark ? "dark" : "light";
 
   return (

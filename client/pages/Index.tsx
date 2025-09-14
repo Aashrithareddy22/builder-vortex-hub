@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
-import { Recycle, CalendarClock, Bell, BarChart3, Users, ShieldCheck, MapPinned, Leaf } from "lucide-react";
+import {
+  Recycle,
+  CalendarClock,
+  Bell,
+  BarChart3,
+  Users,
+  ShieldCheck,
+  MapPinned,
+  Leaf,
+} from "lucide-react";
 
 export default function Index() {
   return (
@@ -15,21 +24,40 @@ export default function Index() {
             Join the <span className="text-primary">Recycling Revolution</span>
           </h1>
           <p className="mt-4 max-w-prose text-muted-foreground">
-            WasteZero is a digital platform to help users schedule waste pickups, categorize recyclables, and promote responsible waste management. Pickup agents are assigned intelligently based on location.
+            WasteZero is a digital platform to help users schedule waste
+            pickups, categorize recyclables, and promote responsible waste
+            management. Pickup agents are assigned intelligently based on
+            location.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link to="/register" className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-primary-foreground shadow hover:opacity-95">
+            <Link
+              to="/register"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-primary-foreground shadow hover:opacity-95"
+            >
               Get Started
             </Link>
-            <Link to="/login" className="inline-flex items-center justify-center rounded-md border px-5 py-3 text-foreground hover:bg-accent">
+            <Link
+              to="/login"
+              className="inline-flex items-center justify-center rounded-md border px-5 py-3 text-foreground hover:bg-accent"
+            >
               I already have an account
             </Link>
           </div>
           <ul className="mt-8 grid grid-cols-2 gap-4 text-sm text-muted-foreground md:max-w-md">
-            <li className="flex items-center gap-2"><CalendarClock className="h-4 w-4 text-primary"/> Schedule pickups</li>
-            <li className="flex items-center gap-2"><Leaf className="h-4 w-4 text-primary"/> Categorize recyclables</li>
-            <li className="flex items-center gap-2"><MapPinned className="h-4 w-4 text-primary"/> Location‑based agent matching</li>
-            <li className="flex items-center gap-2"><Bell className="h-4 w-4 text-primary"/> Real‑time notifications</li>
+            <li className="flex items-center gap-2">
+              <CalendarClock className="h-4 w-4 text-primary" /> Schedule
+              pickups
+            </li>
+            <li className="flex items-center gap-2">
+              <Leaf className="h-4 w-4 text-primary" /> Categorize recyclables
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPinned className="h-4 w-4 text-primary" /> Location‑based
+              agent matching
+            </li>
+            <li className="flex items-center gap-2">
+              <Bell className="h-4 w-4 text-primary" /> Real‑time notifications
+            </li>
           </ul>
         </div>
         <div className="relative">
@@ -40,7 +68,9 @@ export default function Index() {
                 <Recycle className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">Overview</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                  Overview
+                </p>
                 <h3 className="text-xl font-semibold">Waste Statistics</h3>
               </div>
             </div>
@@ -51,7 +81,10 @@ export default function Index() {
                 { label: "CO₂ Saved (kg)", value: "243" },
                 { label: "Volunteer Hours", value: "87" },
               ].map((m) => (
-                <div key={m.label} className="rounded-lg border bg-background p-4">
+                <div
+                  key={m.label}
+                  className="rounded-lg border bg-background p-4"
+                >
                   <p className="text-xs text-muted-foreground">{m.label}</p>
                   <p className="mt-1 text-2xl font-bold">{m.value}</p>
                 </div>
@@ -72,10 +105,14 @@ export default function Index() {
                 ].map((r) => (
                   <div key={r.name}>
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{r.name}</span><span>{r.pct}%</span>
+                      <span>{r.name}</span>
+                      <span>{r.pct}%</span>
                     </div>
                     <div className="mt-1 h-2 w-full rounded-full bg-muted">
-                      <div className="h-2 rounded-full bg-primary" style={{ width: `${r.pct}%` }} />
+                      <div
+                        className="h-2 rounded-full bg-primary"
+                        style={{ width: `${r.pct}%` }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -91,9 +128,21 @@ export default function Index() {
           <h2 className="text-2xl font-bold">Outcomes</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {[
-              { icon: Users, title: "Register & Login", desc: "Users can register, login and schedule waste pickups." },
-              { icon: BarChart3, title: "Categorize Waste", desc: "Waste is categorized (plastic, organic, e‑waste, etc.)." },
-              { icon: Bell, title: "Smart Matching", desc: "Agents are notified and assigned dynamically; users get alerts and stats." },
+              {
+                icon: Users,
+                title: "Register & Login",
+                desc: "Users can register, login and schedule waste pickups.",
+              },
+              {
+                icon: BarChart3,
+                title: "Categorize Waste",
+                desc: "Waste is categorized (plastic, organic, e‑waste, etc.).",
+              },
+              {
+                icon: Bell,
+                title: "Smart Matching",
+                desc: "Agents are notified and assigned dynamically; users get alerts and stats.",
+              },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-xl border bg-background p-6">
                 <Icon className="h-5 w-5 text-primary" />
@@ -110,10 +159,17 @@ export default function Index() {
         <div className="container">
           <h2 className="text-2xl font-bold">Modules</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-4">
-            {["User Management","Opportunity Management","Matching & Communication","Administration & Reporting"].map((m) => (
+            {[
+              "User Management",
+              "Opportunity Management",
+              "Matching & Communication",
+              "Administration & Reporting",
+            ].map((m) => (
               <div key={m} className="rounded-xl border bg-background p-6">
                 <h3 className="font-semibold">{m}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Learn more on the dashboard after you create an account.</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Learn more on the dashboard after you create an account.
+                </p>
               </div>
             ))}
           </div>
@@ -123,10 +179,17 @@ export default function Index() {
       <section className="border-t py-12">
         <div className="container flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h3 className="text-xl font-semibold">Ready to make waste management smarter?</h3>
-            <p className="text-sm text-muted-foreground">Create your account to schedule pickups and track impact.</p>
+            <h3 className="text-xl font-semibold">
+              Ready to make waste management smarter?
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Create your account to schedule pickups and track impact.
+            </p>
           </div>
-          <Link to="/register" className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-primary-foreground shadow hover:opacity-95">
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-primary-foreground shadow hover:opacity-95"
+          >
             Create account
           </Link>
         </div>
