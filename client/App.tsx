@@ -18,6 +18,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ function Header() {
           <Link to="/register" className={isActive("/register")}>
             Register
           </Link>
+          <Link to="/profile" className={isActive("/profile")}>Profile</Link>
           <button
             aria-label="Toggle theme"
             onClick={toggle}
@@ -89,6 +91,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
