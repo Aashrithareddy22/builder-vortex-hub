@@ -34,8 +34,18 @@ export default function Register() {
 
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 500));
+    const profile = {
+      name: data.name,
+      email: data.email,
+      location: data.location || "",
+      role: data.role,
+      skills: [] as string[],
+      bio: "",
+    };
+    localStorage.setItem("wastezero_profile", JSON.stringify(profile));
+    localStorage.setItem("wastezero_password", data.password);
     toast.success("Account created");
-    navigate("/login");
+    navigate("/profile");
   };
 
   return (
