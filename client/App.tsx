@@ -65,6 +65,9 @@ function Header() {
           <Link to="/register" className={isActive("/register")}>
             Register
           </Link>
+          <Link to="/profile" className={isActive("/profile")}>
+            Profile
+          </Link>
           <button
             aria-label="Toggle theme"
             onClick={toggle}
