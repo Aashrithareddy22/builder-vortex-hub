@@ -63,24 +63,30 @@ export default function Profile() {
 
       {tab === "profile" ? (
         <form onSubmit={handleSubmit(onSubmit)} className="mt-6 grid gap-4 rounded-xl border bg-card p-6 md:grid-cols-2">
+          <div className="md:col-span-2">
+            <h2 className="text-base font-semibold">Personal Information</h2>
+            <p className="text-xs text-muted-foreground">Update your personal information and profile details</p>
+          </div>
           <div className="md:col-span-1">
             <label className="text-sm font-medium">Full Name</label>
-            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" {...register("name")} />
+            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="Enter your full name" {...register("name")} />
             {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name.message}</p>}
           </div>
           <div className="md:col-span-1">
             <label className="text-sm font-medium">Email</label>
-            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" {...register("email")} />
+            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="Enter your email" {...register("email")} />
+            <p className="mt-1 text-xs text-muted-foreground">This is the email address used for account notifications.</p>
             {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email.message}</p>}
           </div>
 
           <div className="md:col-span-1">
             <label className="text-sm font-medium">Location</label>
-            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="City, Country" {...register("location")} />
+            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="Enter your location" {...register("location")} />
+            <p className="mt-1 text-xs text-muted-foreground">This helps match you with nearby opportunities.</p>
           </div>
           <div className="md:col-span-1">
             <label className="text-sm font-medium">Skills</label>
-            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="e.g., recycling, logistics" {...register("skills")} />
+            <input className="mt-1 w-full rounded-md border bg-background px-3 py-2 focus:ring-2 focus:ring-ring" placeholder="Add your skills..." {...register("skills")} />
           </div>
 
           <div className="md:col-span-2">
