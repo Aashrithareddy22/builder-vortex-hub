@@ -10,3 +10,11 @@
 export interface DemoResponse {
   message: string;
 }
+
+export interface UserProfile {
+  name: string;
+  email: string;
+  location?: string;
+  skills?: string; // comma separated
+  bio?: string;
+}
